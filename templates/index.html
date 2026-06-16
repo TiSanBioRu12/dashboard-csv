@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard CSV</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h1>Dashboard de Visualización CSV</h1>
+
+    <div class="controles-carga">
+      <input type="file" id="archivo" accept=".csv" />
+      <button onclick="cargarCSV()">Cargar</button>
+    </div>
+
+    <div id="controles" style="display: none">
+      <label>Tipo de gráfico:</label>
+      <select id="tipoGrafico">
+        <option value="bar">Barras</option>
+        <option value="line">Líneas</option>
+        <option value="pie">Pastel</option>
+        <option value="scatter">Dispersión</option>
+      </select>
+
+      <label>Eje X:</label>
+      <select id="ejeX"></select>
+
+      <label>Eje Y:</label>
+      <select id="ejeY"></select>
+
+      <button onclick="generarGrafico()">Generar</button>
+      <button onclick="exportar()">Exportar PNG</button>
+    </div>
+
+    <div id="estadisticas"></div>
+    <canvas id="grafico"></canvas>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>
